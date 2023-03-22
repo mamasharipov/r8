@@ -1,0 +1,21 @@
+
+$primaryBlack: #000;
+$primaryWhite: #ffff;
+$primeryHover: #ff6347;
+
+@import "./reset.scss";
+
+%flexBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin setFlexBox($space) {
+    display: flex;
+    justify-content: $space;
+}
+
+@mixin serSize($width, $margin) {
+    width: $width;
+    margin: $margin;
+}

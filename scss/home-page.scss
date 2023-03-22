@@ -1,0 +1,85 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+$primaryBlack: #000;
+$primaryWhite: #ffff;
+$primeryHover: #ff6347;
+
+@import "./reset.scss";
+
+%flexBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin setFlexBox($space) {
+    display: flex;
+    justify-content: $space;
+}
+
+@mixin serSize($width, $margin) {
+    width: $width;
+    margin: $margin;
+}
+
+
+header{
+    background-color: black;
+    width: 100%;
+    padding: 15px 0;
+}   
+
+.nav{
+
+    @include setFlexBox(space-between);
+    @include serSize(87%, 0 auto);
+    // display: flex;
+    // justify-content: space-between;
+    // width: 87%;
+    // margin: 0 auto;
+
+    &_logo{
+        font-size: 34px;
+        color: $primaryWhite;
+    }
+
+    &_navbar{
+        @include setFlexBox(space-around);
+        width: 50%;
+        list-style: none;
+
+        li{
+            height: 40px;
+            line-height: 40px;
+        }
+
+        a{
+            color: #fff;
+            text-decoration: none;
+            transition: 0.2s all linear;
+
+            &:hover{
+                color: $primeryHover
+            }
+        }
+    }
+}
+
+.container{
+    @include setFlexBox(space-between);
+    @include serSize(87%, 100px auto);
+    // display: flex;
+    // justify-content: space-between;
+    // width: 87%;
+    // margin: 100px auto;
+
+    .col{
+        width: 30%;
+        border-radius: 20px;
+        background-color: $primaryBlack;
+        height: 250px;
+    }
+}
